@@ -11,6 +11,7 @@ export const title = tv({
       green: "from-[#6FEE8D] to-[#17c964]", // Green gradient
       pink: "from-[#FF72E1] to-[#F54C7A]",
       foreground: "dark:from-[#FFFFFF] dark:to-[#4B4B4B]",
+      football: "from-[#4caf50] to-[#388e3c]", // Football theme gradient
     },
     size: {
       sm: "text-3xl lg:text-4xl",
@@ -31,9 +32,10 @@ export const title = tv({
         "yellow",
         "blue",
         "cyan",
-        "green", // Green gradient compound variant
+        "green",
         "pink",
         "foreground",
+        "football", // Added football gradient
       ],
       class: "bg-clip-text text-transparent bg-gradient-to-b",
     },

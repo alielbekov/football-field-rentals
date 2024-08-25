@@ -42,18 +42,6 @@ export default function Home() {
           Rent Now
         </Link>
       </div>
-
-      <div className="relative mt-12 text-center">
-        <h3 className="text-xl font-semibold text-nextui-primary">
-          Why Choose Us?
-        </h3>
-        <p className="mt-4 text-lg text-nextui-foreground">
-          We offer a wide range of football stadiums with easy booking,
-          transparent pricing, and no hidden fees. Whether you're looking for a
-          quick game or a weekend tournament, we've got you covered.
-        </p>
-      </div>
-
       <div className="relative mt-12 flex flex-col md:flex-row gap-6 justify-center">
         <div className="text-center p-6 rounded-lg shadow-md bg-nextui-accent/10 text-nextui-foreground">
           <FaFutbol className="text-nextui-primary mb-4 mx-auto" size={30} />

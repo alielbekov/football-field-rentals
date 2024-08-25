@@ -59,9 +59,7 @@ export default function RentPage() {
 
   return (
     <main className="flex flex-col items-center justify-start min-h-screen p-8">
-      <h1 className="text-4xl font-bold mb-6 text-white">
-        Find a Football Field
-      </h1>
+      <h1 className="text-4xl font-bold mb-6">Find a Football Field</h1>
 
       <Input
         fullWidth

@@ -1,7 +1,9 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": true
   },
-  "eslint.validate": ["javascript"]
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+  "editor.formatOnSave": true, // Enable format on save
+  "prettier.requireConfig": true // Only run Prettier if a configuration file is present
 }

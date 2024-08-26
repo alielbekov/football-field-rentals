@@ -3,8 +3,6 @@ import NextLink from "next/link";
 
 import { title } from "./primitives";
 
-import { ThemeSwitch } from "@/components/theme-switch";
-
 export const Navbar = () => {
   return (
     <NextUINavbar
@@ -17,9 +15,7 @@ export const Navbar = () => {
           <div className={`text-nextui-primary ${title()}`}>Go Football</div>
         </NextLink>
       </NavbarContent>
-      <NavbarContent justify="end">
-        <ThemeSwitch />
-      </NavbarContent>
+      <NavbarContent justify="end" />
     </NextUINavbar>
   );
 };

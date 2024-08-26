@@ -12,7 +12,7 @@ import { title, subtitle } from "@/components/primitives";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-6 py-16 md:py-20 bg-cover bg-center relative bg-nextui-background text-nextui-foreground">
+    <section className="flex flex-col items-center justify-center gap-6 py-16 px-8 md:py-20 bg-cover bg-center relative bg-nextui-background text-nextui-foreground">
       {/* Overlay for Blur Effect */}
       <div className="absolute inset-0 backdrop-blur-sm bg-nextui-background/70" />
 

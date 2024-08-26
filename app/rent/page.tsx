@@ -9,6 +9,8 @@ import {
   CardFooter,
   Button,
 } from "@nextui-org/react";
+import { FaShower, FaParking, FaMoneyBillWave } from "react-icons/fa"; // Import icons from react-icons
+import { MdDirections } from "react-icons/md"; // Import direction icon
 
 type Field = {
   _id: string;
@@ -18,7 +20,9 @@ type Field = {
     type: string;
     coordinates: [number, number];
   };
-  phoneNumber: string;
+  shower: boolean;
+  parking: boolean;
+  pricing: number;
 };
 
 export default function RentPage() {
@@ -31,7 +35,9 @@ export default function RentPage() {
     const fetchFields = async () => {
       try {
         const response = await fetch(
-          `/api/getFields?page=${currentPage}&limit=4&search=${encodeURIComponent(searchTerm)}`,
+          `/api/getFields?page=${currentPage}&limit=4&search=${encodeURIComponent(
+            searchTerm,
+          )}`,
         );
         const data = await response.json();
 
@@ -82,13 +88,37 @@ export default function RentPage() {
                   <p className="text-gray-500">{field.address}</p>
                 </CardHeader>
                 <CardBody>
-                  <p>
-                    Coordinates: [{field.location.coordinates[1]},{" "}
-                    {field.location.coordinates[0]}]
-                  </p>
-                  <p>Phone: {field.phoneNumber}</p>
+                  <div className="flex items-center mt-4">
+                    <FaShower
+                      className={`mr-2 ${
+                        field.shower ? "text-green-500" : "text-gray-500"
+                      }`}
+                    />
+                    {field.shower ? "Shower Available" : "No Shower"}
+                  </div>
+                  <div className="flex items-center mt-2">
+                    <FaParking
+                      className={`mr-2 ${
+                        field.parking ? "text-green-500" : "text-gray-500"
+                      }`}
+                    />
+                    {field.parking ? "Parking Available" : "No Parking"}
+                  </div>
+                  <div className="flex items-center mt-2">
+                    <FaMoneyBillWave className="mr-2 text-green-500" />
+                    {field.pricing.toLocaleString()} soums
+                  </div>
                 </CardBody>
-                <CardFooter>
+                <CardFooter className="flex justify-between">
+                  <Button
+                    as="a"
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${field.location.coordinates[1]},${field.location.coordinates[0]}`}
+                    rel="noopener noreferrer"
+                    startContent={<MdDirections />}
+                    target="_blank"
+                  >
+                    Directions
+                  </Button>
                   <NextLink href={`/fields/${field._id}`}>
                     <Button as="a">View Details</Button>
                   </NextLink>
